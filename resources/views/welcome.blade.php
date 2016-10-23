@@ -14,9 +14,12 @@
 
     <body>
         <form action="/purchases" method="POST">
+
+            {{ csrf_field() }}
+
             <script
                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_GpfxnwJvUQtzolMwZ9cdNUQu"
+                    data-key="{{ config('services.stripe.key') }}"
                     data-amount="2500"
                     data-name="Some Book"
                     data-description="This will give you everything you need to get started."
